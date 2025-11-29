@@ -1,6 +1,6 @@
 export const categories = [
   'Electricals', 'Electronics', 'Clothing', 'Printing/Xerox', 
-  'Hardware tools', 'Groceries', 'Stationery', 'Bakery/Food'
+  'Hardware tools', 'Groceries', 'Stationery', 'Bakery/Food','Home-Essentials'
 ];
 
 export const shops = {
@@ -51,6 +51,12 @@ export const shops = {
     { id: 30, name: 'Fresh Bakes', distance: 1.4, avgPrice: 100, rating: 4.2 },
     { id: 31, name: 'Tasty Bites', distance: 2.1, avgPrice: 140, rating: 4.5 },
     { id: 32, name: 'Food Corner', distance: 1.7, avgPrice: 110, rating: 4.3 }
+  ],
+  'Home-Essentials': [
+    { id: 33, name: 'Home Mart', distance: 1.0, avgPrice: 85, rating: 4.3 },
+    { id: 34, name: 'Essential Store', distance: 1.6, avgPrice: 90, rating: 4.1 },
+    { id: 35, name: 'Daily Essentials', distance: 2.3, avgPrice: 80, rating: 4.4 },
+    { id: 36, name: 'Home Care Plus', distance: 1.9, avgPrice: 95, rating: 4.2 }
   ]
 };
 
@@ -104,6 +110,19 @@ const bakeryItems = [
   { name: 'Croissants', price: 90, rating: 4.3, image: 'https://via.placeholder.com/150x100/795548/white?text=Croissant' }
 ];
 
+const homeEssentialItems = [
+  { name: 'Dal', price: 120, rating: 4.3, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Dal' },
+  { name: 'Diapers', price: 450, rating: 4.4, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Diapers' },
+  { name: 'Broomstick', price: 85, rating: 4.1, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Broom' },
+  { name: 'Detergent', price: 180, rating: 4.2, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Detergent' },
+  { name: 'Toilet Paper', price: 65, rating: 4.0, image: 'https://via.placeholder.com/150x100/F44336/white?text=Toilet+Paper' },
+  { name: 'Soap', price: 35, rating: 4.3, image: 'https://via.placeholder.com/150x100/607D8B/white?text=Soap' },
+  { name: 'Shampoo', price: 220, rating: 4.2, image: 'https://via.placeholder.com/150x100/795548/white?text=Shampoo' },
+  { name: 'Toothpaste', price: 95, rating: 4.1, image: 'https://via.placeholder.com/150x100/8BC34A/white?text=Toothpaste' },
+  { name: 'Bucket', price: 150, rating: 4.0, image: 'https://via.placeholder.com/150x100/FF5722/white?text=Bucket' },
+  { name: 'Mop', price: 120, rating: 4.2, image: 'https://via.placeholder.com/150x100/3F51B5/white?text=Mop' }
+];
+
 export const items = {
   // Electricals shops (1-4) get electrical items
   1: electricalItems.slice(0, 5),
@@ -133,7 +152,13 @@ export const items = {
   29: bakeryItems.slice(0, 5),
   30: bakeryItems.slice(2, 7),
   31: bakeryItems.slice(1, 6),
-  32: bakeryItems.slice(0, 4).concat(bakeryItems.slice(5, 7))
+  32: bakeryItems.slice(0, 4).concat(bakeryItems.slice(5, 7)),
+  
+  // Home-Essentials shops (33-36) get home essential items
+  33: homeEssentialItems.slice(0, 6),
+  34: homeEssentialItems.slice(3, 9),
+  35: homeEssentialItems.slice(2, 8),
+  36: homeEssentialItems.slice(1, 7)
 };
 
 // Generate items for remaining shops with generic items
