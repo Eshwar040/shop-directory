@@ -54,46 +54,90 @@ export const shops = {
   ]
 };
 
+const electricalItems = [
+  { name: 'LED Bulbs', price: 150, rating: 4.2, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=LED+Bulbs' },
+  { name: 'Switches', price: 25, rating: 4.0, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Switches' },
+  { name: 'Wires', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Wires' },
+  { name: 'Plugs', price: 35, rating: 4.1, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Plugs' },
+  { name: 'Extension Cords', price: 120, rating: 4.4, image: 'https://via.placeholder.com/150x100/F44336/white?text=Extension' },
+  { name: 'Ceiling Fans', price: 1200, rating: 4.3, image: 'https://via.placeholder.com/150x100/607D8B/white?text=Fans' },
+  { name: 'Table Lamps', price: 350, rating: 4.1, image: 'https://via.placeholder.com/150x100/795548/white?text=Lamps' }
+];
+
+const electronicsItems = [
+  { name: 'Smartphones', price: 15000, rating: 4.4, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Phone' },
+  { name: 'Laptops', price: 45000, rating: 4.5, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Laptop' },
+  { name: 'Tablets', price: 12000, rating: 4.2, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Tablet' },
+  { name: 'Headphones', price: 2500, rating: 4.3, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Headphone' },
+  { name: 'Speakers', price: 3500, rating: 4.1, image: 'https://via.placeholder.com/150x100/F44336/white?text=Speaker' },
+  { name: 'Cameras', price: 25000, rating: 4.6, image: 'https://via.placeholder.com/150x100/607D8B/white?text=Camera' },
+  { name: 'Smart Watches', price: 8000, rating: 4.2, image: 'https://via.placeholder.com/150x100/795548/white?text=Watch' }
+];
+
+const clothingItems = [
+  { name: 'T-Shirts', price: 500, rating: 4.2, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=T-Shirt' },
+  { name: 'Jeans', price: 1200, rating: 4.3, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Jeans' },
+  { name: 'Dresses', price: 1800, rating: 4.4, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Dress' },
+  { name: 'Shirts', price: 800, rating: 4.1, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Shirt' },
+  { name: 'Jackets', price: 2500, rating: 4.5, image: 'https://via.placeholder.com/150x100/F44336/white?text=Jacket' },
+  { name: 'Shoes', price: 1500, rating: 4.2, image: 'https://via.placeholder.com/150x100/607D8B/white?text=Shoes' },
+  { name: 'Bags', price: 1000, rating: 4.0, image: 'https://via.placeholder.com/150x100/795548/white?text=Bag' }
+];
+
+const groceryItems = [
+  { name: 'Rice', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Rice' },
+  { name: 'Wheat', price: 45, rating: 4.2, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Wheat' },
+  { name: 'Pulses', price: 120, rating: 4.1, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Pulses' },
+  { name: 'Oil', price: 150, rating: 4.4, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Oil' },
+  { name: 'Sugar', price: 50, rating: 4.0, image: 'https://via.placeholder.com/150x100/F44336/white?text=Sugar' },
+  { name: 'Vegetables', price: 60, rating: 4.2, image: 'https://via.placeholder.com/150x100/607D8B/white?text=Vegetables' },
+  { name: 'Fruits', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/795548/white?text=Fruits' }
+];
+
+const bakeryItems = [
+  { name: 'Cakes', price: 350, rating: 4.5, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Cake' },
+  { name: 'Pastries', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Pastry' },
+  { name: 'Cookies', price: 120, rating: 4.2, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Cookie' },
+  { name: 'Muffins', price: 60, rating: 4.1, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Muffin' },
+  { name: 'Donuts', price: 45, rating: 4.4, image: 'https://via.placeholder.com/150x100/F44336/white?text=Donut' },
+  { name: 'Bread', price: 35, rating: 4.0, image: 'https://via.placeholder.com/150x100/607D8B/white?text=Bread' },
+  { name: 'Croissants', price: 90, rating: 4.3, image: 'https://via.placeholder.com/150x100/795548/white?text=Croissant' }
+];
+
 export const items = {
-  1: [
-    { name: 'LED Bulbs', price: 150, rating: 4.2, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=LED+Bulbs' },
-    { name: 'Switches', price: 25, rating: 4.0, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Switches' },
-    { name: 'Wires', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Wires' },
-    { name: 'Plugs', price: 35, rating: 4.1, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Plugs' },
-    { name: 'Extension Cords', price: 120, rating: 4.4, image: 'https://via.placeholder.com/150x100/F44336/white?text=Extension' }
-  ],
-  5: [
-    { name: 'Smartphones', price: 15000, rating: 4.4, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Phone' },
-    { name: 'Laptops', price: 45000, rating: 4.5, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Laptop' },
-    { name: 'Tablets', price: 12000, rating: 4.2, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Tablet' },
-    { name: 'Headphones', price: 2500, rating: 4.3, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Headphone' },
-    { name: 'Speakers', price: 3500, rating: 4.1, image: 'https://via.placeholder.com/150x100/F44336/white?text=Speaker' }
-  ],
-  9: [
-    { name: 'T-Shirts', price: 500, rating: 4.2, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=T-Shirt' },
-    { name: 'Jeans', price: 1200, rating: 4.3, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Jeans' },
-    { name: 'Dresses', price: 1800, rating: 4.4, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Dress' },
-    { name: 'Shirts', price: 800, rating: 4.1, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Shirt' },
-    { name: 'Jackets', price: 2500, rating: 4.5, image: 'https://via.placeholder.com/150x100/F44336/white?text=Jacket' }
-  ],
-  21: [
-    { name: 'Rice', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Rice' },
-    { name: 'Wheat', price: 45, rating: 4.2, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Wheat' },
-    { name: 'Pulses', price: 120, rating: 4.1, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Pulses' },
-    { name: 'Oil', price: 150, rating: 4.4, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Oil' },
-    { name: 'Sugar', price: 50, rating: 4.0, image: 'https://via.placeholder.com/150x100/F44336/white?text=Sugar' }
-  ],
-  29: [
-    { name: 'Cakes', price: 350, rating: 4.5, image: 'https://via.placeholder.com/150x100/4CAF50/white?text=Cake' },
-    { name: 'Pastries', price: 80, rating: 4.3, image: 'https://via.placeholder.com/150x100/2196F3/white?text=Pastry' },
-    { name: 'Cookies', price: 120, rating: 4.2, image: 'https://via.placeholder.com/150x100/FF9800/white?text=Cookie' },
-    { name: 'Muffins', price: 60, rating: 4.1, image: 'https://via.placeholder.com/150x100/9C27B0/white?text=Muffin' },
-    { name: 'Donuts', price: 45, rating: 4.4, image: 'https://via.placeholder.com/150x100/F44336/white?text=Donut' }
-  ]
+  // Electricals shops (1-4) get electrical items
+  1: electricalItems.slice(0, 5),
+  2: electricalItems.slice(2, 7),
+  3: electricalItems.slice(1, 6),
+  4: electricalItems.slice(0, 4).concat(electricalItems.slice(5, 7)),
+  
+  // Electronics shops (5-8) get electronics items
+  5: electronicsItems.slice(0, 5),
+  6: electronicsItems.slice(2, 7),
+  7: electronicsItems.slice(1, 6),
+  8: electronicsItems.slice(0, 4).concat(electronicsItems.slice(5, 7)),
+  
+  // Clothing shops (9-12) get clothing items
+  9: clothingItems.slice(0, 5),
+  10: clothingItems.slice(2, 7),
+  11: clothingItems.slice(1, 6),
+  12: clothingItems.slice(0, 4).concat(clothingItems.slice(5, 7)),
+  
+  // Groceries shops (21-24) get grocery items
+  21: groceryItems.slice(0, 5),
+  22: groceryItems.slice(2, 7),
+  23: groceryItems.slice(1, 6),
+  24: groceryItems.slice(0, 4).concat(groceryItems.slice(5, 7)),
+  
+  // Bakery shops (29-32) get bakery items
+  29: bakeryItems.slice(0, 5),
+  30: bakeryItems.slice(2, 7),
+  31: bakeryItems.slice(1, 6),
+  32: bakeryItems.slice(0, 4).concat(bakeryItems.slice(5, 7))
 };
 
-// Generate sample items for remaining shops
-for (let i = 2; i <= 32; i++) {
+// Generate items for remaining shops with generic items
+for (let i = 13; i <= 28; i++) {
   if (!items[i]) {
     items[i] = [
       { name: `Item ${i}-1`, price: Math.floor(Math.random() * 500) + 50, rating: (Math.random() * 2 + 3).toFixed(1), image: `https://via.placeholder.com/150x100/4CAF50/white?text=Item+${i}-1` },

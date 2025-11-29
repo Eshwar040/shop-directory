@@ -33,22 +33,22 @@ function CategoryGrid() {
     }
     
     if (searchType === 'items' || searchType === 'all') {
+      const shopsWithItem = new Set();
       Object.entries(items).forEach(([shopId, shopItems]) => {
         const shop = allShops.find(s => s.id === parseInt(shopId));
         const category = Object.keys(shops).find(cat => 
           shops[cat].some(s => s.id === parseInt(shopId))
         );
         
-        shopItems.forEach(item => {
+        const hasMatchingItem = shopItems.some(item => {
           const itemName = typeof item === 'string' ? item : item.name;
-          if (itemName.toLowerCase().includes(searchTerm.toLowerCase())) {
-            results.push({
-              type: 'item',
-              data: { name: itemName, shop: shop },
-              category
-            });
-          }
+          return itemName.toLowerCase().includes(searchTerm.toLowerCase());
         });
+        
+        if (hasMatchingItem && !shopsWithItem.has(shop.id)) {
+          shopsWithItem.add(shop.id);
+          results.push({ type: 'shop', data: shop, category, hasItem: true });
+        }
       });
     }
     
@@ -88,35 +88,21 @@ function CategoryGrid() {
           ) : (
             <div className="results-grid">
               {searchResults.map((result, index) => (
-                <div key={index} className={`result-card ${result.type}`}>
-                  {result.type === 'shop' ? (
-                    <div className="shop-card" onClick={() => navigate(`/shop/${result.data.id}`)}>
-                      <h4>{result.data.name}</h4>
-                      <p className="category">{result.category}</p>
-                      <div className="shop-details">
-                        <span className="distance">{result.data.distance} km</span>
-                        <span className="price">₹{result.data.avgPrice}</span>
-                      </div>
-                      <div className="items-preview">
-                        {(items[result.data.id] || []).slice(0, 3).map((item, i) => (
-                          <span key={i} className="item-tag">{typeof item === 'string' ? item : item.name}</span>
-                        ))}
-                        {(items[result.data.id] || []).length > 3 && (
-                          <span className="more-items">+{(items[result.data.id] || []).length - 3}</span>
-                        )}
-                      </div>
+                <div key={index} className="result-card shop">
+                  <div className="shop-card" onClick={() => navigate(`/shop/${result.data.id}`)}>
+                    <h4>{result.data.name}</h4>
+                    <p className="category">{result.category}</p>
+                    <div className="shop-details">
+                      <span className="distance">{result.data.distance} km</span>
+                      <span className="price">₹{result.data.avgPrice}</span>
+                      <span className="rating">★ {result.data.rating}</span>
                     </div>
-                  ) : (
-                    <div className="item-card">
-                      <h4>{result.data.name}</h4>
-                      <p className="shop-name">{result.data.shop.name}</p>
-                      <p className="category">{result.category}</p>
-                      <div className="shop-details">
-                        <span className="distance">{result.data.shop.distance} km</span>
-                        <span className="price">₹{result.data.shop.avgPrice}</span>
+                    {result.hasItem && (
+                      <div className="item-match">
+                        <span className="match-indicator">Has "{searchTerm}"</span>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

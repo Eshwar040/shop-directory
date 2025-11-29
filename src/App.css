@@ -456,6 +456,19 @@ body {
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+.item-match {
+  margin-top: 10px;
+}
+
+.match-indicator {
+  background: #4CAF50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
 .error {
   text-align: center;
   color: #666;
